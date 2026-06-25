@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AIRE</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+  </head>
+  <body>
+    <div class="console">
+      <header class="console-header">
+        <div class="header-left">
+          <span class="mark">AIRE</span>
+          <span class="header-sub">Requirement Intake Console</span>
+        </div>
+        <div class="header-right">
+          <span class="status-dot"></span>
+          <span class="status-text">listening</span>
+        </div>
+      </header>
+
+      <main class="thread" id="thread">
+        <div class="msg msg--bot">
+          <div class="msg-label">AIRE</div>
+          <div class="bubble">
+            Describe a requirement for your system and I'll log it. If I'm confident I understood it, I'll ask one quick follow-up. Otherwise I'll
+            queue it for the team.
+          </div>
+        </div>
+      </main>
+
+      <form class="composer" id="composer" autocomplete="off">
+        <input type="text" id="messageInput" placeholder="e.g. The system should let admins reset a user's password" autocomplete="off" />
+        <button type="submit" id="sendBtn" aria-label="Send">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+            <path d="M3 11L21 3L13 21L11 13L3 11Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round" />
+          </svg>
+        </button>
+      </form>
+
+      <footer class="console-footer">
+        <span id="lastMeta">No requirement processed yet</span>
+      </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/chat.js') }}"></script>
+  </body>
+</html>
