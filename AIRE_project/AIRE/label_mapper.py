@@ -8,18 +8,16 @@ Example:
     Dataset column value = 3
     Dictionary entry: {"3": "Please provide a specific target date."}
 """
-
-LABEL_MAP = {
-    "1": "Could you clarify which user role performs this action?",
-    "2": "What should happen if this action fails?",
-    "3": "Please provide a specific target date.",
-    "4": "Can you specify the expected response time for this feature?",
-    "5": "Should this requirement apply to all user roles or a specific one?",
-}
+import random
+from AIRE.vocab import BASIC_CONV, QUES, Vocab
 
 DEFAULT_RESPONSE = "Thanks for the detail - could you elaborate a bit further?"
 
 
 def map_label_to_response(label: str) -> str:
     """Look up the clarifying sentence for a given label."""
-    return LABEL_MAP.get(str(label), DEFAULT_RESPONSE)
+    print("LABEL(label_mapper) : ", label)
+    if label in BASIC_CONV:
+        return Vocab.get(str(label), DEFAULT_RESPONSE)
+    elif label in QUES:
+        return Vocab['question'].get(str(label), DEFAULT_RESPONSE)

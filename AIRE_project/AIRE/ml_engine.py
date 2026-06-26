@@ -13,8 +13,12 @@ Contract this function must honor (so app.py never needs to change):
     }
 """
 import random
-# Placeholder label set - replace with your real Label_BA_x / Label_QA_x etc.
-DUMMY_LABELS = ["1", "2", "3", "4", "5"]
+from AIRE.vocab import BASIC_CONV, QUES, DUMMY_LABELS, greets
+import json
+import spacy
+
+
+nlp = spacy.load('en_core_web_md')
 
 
 def classify_requirement(requirement_text: str) -> dict:
@@ -25,9 +29,12 @@ def classify_requirement(requirement_text: str) -> dict:
     before the real scikit-learn model is wired in.
     """
     confidence = round(random.uniform(0.60, 0.99), 2)
-    # label = random.choice(DUMMY_LABELS)
-    label = DUMMY_LABELS[0]
-
+    label = random.choice(DUMMY_LABELS)
+    doc = nlp(requirement_text)
+    if len(doc) < 5 and True in [greet.lower() in [x.text.lower() for x in doc] for greet in greets]:
+        label = random.choice(BASIC_CONV)
+        confidence = 0.9
+    print("DEBUGGING|||||||||:", label, confidence)
     return {
         "confidence": confidence,
         "label": label

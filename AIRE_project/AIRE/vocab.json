@@ -1,0 +1,12 @@
+{
+  "hi": "👋Hi I am a AIRE(AI-Requirenment gethering) bot please place your requirenemnt",
+  "hello": "👋Hello I am a AIRE(AI-Requirenment gethering) bot please place your requirenemnt",
+  "name": "I am AIRE(AI-Requirenment gethering) bot please place your requirenemnt to continue",
+  "question": {
+    "1": "Could you clarify which user role performs this action?",
+    "2": "What should happen if this action fails?",
+    "3": "Please provide a specific target date.",
+    "4": "Can you specify the expected response time for this feature?",
+    "5": "Should this requirement apply to all user roles or a specific one?"
+  }
+}
