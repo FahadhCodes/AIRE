@@ -13,7 +13,7 @@ Contract this function must honor (so app.py never needs to change):
     }
 """
 import random
-from AIRE.vocab import BASIC_CONV, QUES, DUMMY_LABELS, greets
+from AIRE.vocab import greet, Vocab
 import json
 import spacy
 
@@ -28,14 +28,22 @@ def classify_requirement(requirement_text: str) -> dict:
     Flask <-> UI <-> routing logic can be tested end-to-end
     before the real scikit-learn model is wired in.
     """
+    data = greet(requirement_text)
     confidence = round(random.uniform(0.60, 0.99), 2)
-    label = random.choice(DUMMY_LABELS)
+    # label = random.choice(list(QUES))
     doc = nlp(requirement_text)
-    if len(doc) < 5 and True in [greet.lower() in [x.text.lower() for x in doc] for greet in greets]:
-        label = random.choice(BASIC_CONV)
-        confidence = 0.9
+    if data['max_similarity_value'] > 0.5 and len(doc) < 7:
+        confidence = 0
+        label = "greeting"
+        res = data['response']
+    else:
+        keys = list(Vocab["respons"]["question"].keys())
+        print(keys)
+        label = random.choice(keys)
+        res = 'Could you explain further🤔?'
     print("DEBUGGING|||||||||:", label, confidence)
     return {
         "confidence": confidence,
-        "label": label
+        "label": label,
+        "response": res
     }

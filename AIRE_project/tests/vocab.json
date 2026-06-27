@@ -1,12 +1,141 @@
 {
-  "hi": "👋Hi I am a AIRE(AI-Requirenment gethering) bot please place your requirenemnt.",
-  "hello": "👋Hello I am a AIRE(AI-Requirenment gethering) bot please place your requirenemnt.",
-  "name": "I am AIRE(AI-Requirenment gethering) bot please place your requirenemnt to continue.",
-  "question": {
-    "1": "Could you clarify which user role performs this action?",
-    "2": "What should happen if this action fails?",
-    "3": "Please provide a specific target date.",
-    "4": "Can you specify the expected response time for this feature?",
-    "5": "Should this requirement apply to all user roles or a specific one?"
+  "greetings": {
+    "short_simple": {
+      "category": "Short & Simple (1-2 words)",
+      "words": [
+        "hi",
+        "hello",
+        "hey",
+        "yo",
+        "sup",
+        "hiya",
+        "howdy",
+        "greetings",
+        "salutations",
+        "namaste",
+        "namaskar",
+        "pranam",
+        "hola",
+        "ciao",
+        "aloha",
+        "bonjour",
+        "hallo",
+        "hej",
+        "konnichiwa",
+        "annyeong"
+      ]
+    },
+    "casual_slang": {
+      "category": "Casual & Slang",
+      "words": [
+        "wassup",
+        "hey there",
+        "yo yo",
+        "what's up",
+        "'sup",
+        "hey hey",
+        "hello there",
+        "hiya there",
+        "how's it",
+        "what's good",
+        "what's new",
+        "what's happening",
+        "how goes it",
+        "yo dude",
+        "hey man",
+        "hi buddy",
+        "hello friend",
+        "hey girl",
+        "what's crackin'",
+        "howdy do"
+      ]
+    },
+    "time_based": {
+      "category": "Time-Based Greetings",
+      "words": [
+        "good morning",
+        "morning",
+        "good afternoon",
+        "good evening",
+        "evening",
+        "good day",
+        "g'day",
+        "top of the morning",
+        "nice morning",
+        "beautiful day"
+      ]
+    },
+    "polite_formal": {
+      "category": "Polite & Formal",
+      "words": [
+        "dear sir",
+        "dear madam",
+        "to whom it may concern",
+        "good day to you",
+        "i greet you",
+        "warm greetings",
+        "kind greetings",
+        "respectful hello",
+        "formal greeting",
+        "pleasant greetings"
+      ]
+    },
+    "indian_regional": {
+      "category": "Indian & Regional Greetings",
+      "words": ["vanakkam", "sat sri akal", "jai shri krishna", "kem cho", "adaab", "salaam", "khush amdeed", "swagatam", "nomoshkar", "shubh din"]
+    },
+    "warm_friendly": {
+      "category": "Warm & Friendly",
+      "words": [
+        "nice to see you",
+        "great to see you",
+        "good to meet you",
+        "pleased to meet you",
+        "lovely to see you",
+        "wonderful to meet you",
+        "delighted to see you",
+        "so happy to see you",
+        "what a pleasure",
+        "great to have you here"
+      ]
+    },
+    "checking_in": {
+      "category": "Checking In (Beyond Just Hello)",
+      "words": [
+        "how are you",
+        "how are you doing",
+        "how's it going",
+        "how's life",
+        "how are things",
+        "how have you been",
+        "long time no see",
+        "what's going on",
+        "what's up with you",
+        "how's everything"
+      ]
+    },
+    "international": {
+      "category": "One-Word International Greetings",
+      "words": ["shalom", "merhaba", "dia dhuit", "hei", "tere", "salaam", "olá", "privet", "zdravstvuyte", "ahoj", "sawubona"]
+    }
+  },
+  "respons": {
+    "common": {
+      "short_simple": "Hi there! 👋 Let's find the right software for you!",
+      "casual_slang": "Hey hey! 😎 Ready to build something awesome?",
+      "time_based": "Good day to you! 🌞 How can I assist?",
+      "polite_formal": "Greetings! 🤝 I'm here to professionally understand your needs.",
+      "indian_regional": "Namaste! 🙏 It's a pleasure to assist you today.",
+      "warm_friendly": "Lovely to see you! 😊 Let's get started.",
+      "checking_in": "I'm doing great, thanks for asking! 😄 Now, about your software...",
+      "international": "Welcome! 🌍 Let's find the perfect solution for you."
+    },
+    "question": {
+      "1": "Could you clarify which user role performs this action?",
+      "2": "What should happen if this action fails?",
+      "3": "Please provide a specific target date.",
+      "4": "Can you specify the expected response time for this feature?",
+      "5": "Should this requirement apply to all user roles or a specific one?"
+    }
   }
 }

@@ -58,9 +58,10 @@ def chat():
     ml_result = classify_requirement(requirement_text)
     confidence = ml_result["confidence"]
     label = ml_result["label"]
+    greet_res = ml_result["response"]
 
     # --- LABEL MAPPING ---
-    mapped_sentence = map_label_to_response(label)
+    mapped_sentence = map_label_to_response(label, greet_res)
 
     token = str(uuid.uuid4())[:8].upper()
     REQUIREMENTS_STORE[token] = {
@@ -70,7 +71,10 @@ def chat():
     }
 
     # --- ROUTING LOGIC (per project spec) ---
-    if confidence >= CONFIDENCE_THRESHOLD:
+    if label == 'greeting':
+        reply_text = mapped_sentence
+        status = "Greet"
+    elif confidence >= CONFIDENCE_THRESHOLD:
         # Confident enough to ask a clarifying question back to the client
         reply_text = mapped_sentence
         status = "clarify"

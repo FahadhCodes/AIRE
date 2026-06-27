@@ -38,6 +38,82 @@
 
   > from today I am going to use `vocab.json` as container of vocabulary parameters in `JSON` formate.
 
-- next plans
-  - Instead of list of words ex:- `['Hi', 'Hello', 'Namasthe']` generating `spacy` synonims so that's can more intelligence
-  - Generating forms and textbox with labeles inside chatbot based in defects in the providing requirement so clients directly provide our needed informations so later we do not need to extract the information from raw texts
+---
+
+**27/06/2026 - Log**
+
+---
+
+- Created more efficiant `JSON` thath can response to greetings
+- Struncture of JSON:
+
+  ```JSON
+  {
+  "greetings": {
+    "short_simple": {
+      "category": "Short & Simple (1-2 words)",
+      "words": []
+    },
+    "casual_slang": {
+      "category": "Casual & Slang",
+      "words": []
+    },
+    "time_based": {
+      "category": "Time-Based Greetings",
+      "words": []
+    },
+    "polite_formal": {
+      "category": "Polite & Formal",
+      "words": []
+    },
+    "indian_regional": {
+      "category": "Indian & Regional Greetings",
+      "words": []
+    },
+    "warm_friendly": {
+      "category": "Warm & Friendly",
+      "words": []
+    },
+    "checking_in": {
+      "category": "Checking In (Beyond Just Hello)",
+      "words": []
+    },
+    "international": {
+      "category": "One-Word International Greetings",
+      "words": []
+    }
+  },
+  "respons": {
+    "common": {
+      "short_simple": "",
+      "casual_slang": "",
+      "time_based": "",
+      "polite_formal": "",
+      "indian_regional": "",
+      "warm_friendly": "",
+      "checking_in": "",
+      "international": ""
+    },
+    "question": {
+      "1": "",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": ""
+    }
+  }
+  }
+
+  ```
+
+- Introduced new function `greet()` in `vocab.py` its return
+  - **max_similarity_value** : With `.similarity(doc)` build in function of `spaCy` used to find the similarity of the prompt
+  - **similar_greet_type** : Selecting the most suitable type of greeting type
+  - **response** : Selecting the response
+- Modified `CSS` for assign specific yellow color to the bubble of chat
+
+| chack Box | Description                                                                                                                                      |
+| :-------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| [x] l     | Instead of list of words ex:- `['Hi', 'Hello', 'Namasthe']` generating `spacy` synonims so that's can more intelligence                          |
+| [ ] l     | Like the `greet()` function, introducing new functionality that select suitable question response once the Bot detect the lacks in requirenments |
+| [ ] l     | Still trying yo implement the forms and labeled text box for collect information more pricisely.                                                 |

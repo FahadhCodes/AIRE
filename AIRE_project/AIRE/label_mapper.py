@@ -9,15 +9,13 @@ Example:
     Dictionary entry: {"3": "Please provide a specific target date."}
 """
 import random
-from AIRE.vocab import BASIC_CONV, QUES, Vocab
-
-DEFAULT_RESPONSE = "Thanks for the detail - could you elaborate a bit further?"
+from AIRE.vocab import Vocab, greet
 
 
-def map_label_to_response(label: str) -> str:
+def map_label_to_response(label, direct_res):
     """Look up the clarifying sentence for a given label."""
     print("LABEL(label_mapper) : ", label)
-    if label in BASIC_CONV:
-        return Vocab.get(str(label), DEFAULT_RESPONSE)
-    elif label in QUES:
-        return Vocab['question'].get(str(label), DEFAULT_RESPONSE)
+    if label == 'greeting':
+        return direct_res
+    else:
+        return Vocab["respons"]["question"].get(str(label), direct_res)
